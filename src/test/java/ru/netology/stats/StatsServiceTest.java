@@ -1,6 +1,7 @@
 package ru.netology.stats;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StatsServiceTest {
@@ -8,7 +9,7 @@ public class StatsServiceTest {
     public void allSalesSum() {
         StatsService service = new StatsService();
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = (int) service.allSalesSum(sale);
+        long actual = (int) service.allSalesSum(sale);
         long expected = 180;
         assertEquals(expected, actual);
     }
@@ -18,8 +19,8 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        double actual = (double) service.saleAverageMonth(sale);
-        double expected = 15;
+        long actual = (long) service.saleAverageMonth(sale);
+        long expected = 15;
         assertEquals(expected, actual);
     }
 
