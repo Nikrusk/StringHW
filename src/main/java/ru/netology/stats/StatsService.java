@@ -1,7 +1,7 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public long allSalesSum(int[] sale) { //сумма всех продаж
+    public long allSalesSum(int[] sale) { //сумма всех продаж (использую long, т.к. сумма может быть до 5 млрд, что превышает значение типов int)
         long sum = 0;
         for (long purchase : sale) {
             sum += purchase;
@@ -9,14 +9,14 @@ public class StatsService {
         return sum;
     }
 
-    public long saleAverageMonth(int[] sale) { // средняя сумма продаж в месяц
-        long numberSale = sale.length; //
-        long sum = allSalesSum(sale);
-        long averageMonth = sum / numberSale;
+    public double saleAverageMonth(int[] sale) { // средняя сумма продаж в месяц (использую double, т.к. считаем среднюю сумму и получаем не целое число)
+       int numberSale = sale.length;
+        long sum = allSalesSum(sale); //(использую long, т.к. это сумма)
+        double averageMonth = sum / numberSale;
         return averageMonth;
     }
 
-    public long maxSale(int[] sale) { // месяц продаж на максимальную сумму
+    public int maxSale(int[] sale) { // месяц продаж на максимальную сумму (используем int, т.к. идет расчет месяца, число не превышает 2 млрд., все остальные случаи так же)
         int maxMonth = sale[0];
 
         for (int i = 0; i < sale.length; i++) {
