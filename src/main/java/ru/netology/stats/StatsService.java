@@ -10,7 +10,7 @@ public class StatsService {
     }
 
     public double saleAverageMonth(int[] sale) { // средняя сумма продаж в месяц (1. использую double, т.к. считаем среднюю сумму и получаем не целое число, 2. параметр с типом массив)
-       int numberSale = sale.length // (int, т.к. целое число, не превышает 5 млрд)
+       int numberSale = sale.length; // (int, т.к. целое число, не превышает 5 млрд)
         long sum = allSalesSum(sale); //(использую long, т.к. это сумма)
         double averageMonth = sum / numberSale; //считаем среднюю, поэтому double, не целое число
         return averageMonth;
@@ -40,7 +40,7 @@ public class StatsService {
     }
 
     public int saleBelowAverage(int[] sale) { // месяц, где продажи ниже среднего (месяц, целое число до 2 млрд, поэтому int, во втором случае массив)
-        double averageSum = (double) saleAverageMonth(sale); //double в обоих случаях, т.к. считаем среднюю, ответ скорее всего не целое число
+        int averageSum = (int) saleAverageMonth(sale); //double в обоих случаях, т.к. считаем среднюю, ответ скорее всего не целое число
         int numberBelowAverage = 0; //целое число до 2 млрд
 
         for (int i = 0; i < sale.length; i++) { //целое число до 2 млрд
@@ -52,7 +52,7 @@ public class StatsService {
     }
 
     public int saleAboveAverage(int[] sale) { // месяц, где продажи выше среднего (месяц, целое число до 2 млрд, поэтому int, во втором случае массив)
-        double averageSum = (double) saleAverageMonth(sale); //double в обоих случаях, т.к. считаем среднюю, ответ скорее всего не целое число
+        int averageSum = (int) saleAverageMonth(sale); //double в обоих случаях, т.к. считаем среднюю, ответ скорее всего не целое число
         int numberAboveAverage = 0; //целое число до 2 млрд
 
         for (int i = 0; i < sale.length; i++) {//целое число до 2 млрд
