@@ -10,7 +10,7 @@ public class StatsService {
     }
 
     public long saleAverageMonth(int[] sale) { // средняя сумма продаж в месяц
-        int numberSale = sale.length; //
+        long numberSale = sale.length; //
         long sum = allSalesSum(sale);
         long averageMonth = sum / numberSale;
         return averageMonth;
