@@ -40,7 +40,7 @@ public class StatsService {
     }
 
     public int saleBelowAverage(long[] sale) { // 1) месяц, целое число до 2 млрд, целое число 2) параметр с типом массив может быть свыше 2 млрд, целое число
-        long averageSum = (int) saleAverageMonth(sale); //1) проглядел этот момент, тут сумма, поэтому может быть больше 2 млрд, 2) месяц, меньше 2 млрд, целое число
+        long averageSum = saleAverageMonth(sale); //1) проглядел этот момент, тут сумма, поэтому может быть больше 2 млрд
         int numberBelowAverage = 0; //целое число до 2 млрд
 
         for (int i = 0; i < sale.length; i++) { //целое число до 2 млрд
@@ -52,7 +52,7 @@ public class StatsService {
     }
 
     public int saleAboveAverage(long[] sale) { // 1) месяц, целое число до 2 млрд, целое число 2) параметр с типом массив может быть свыше 2 млрд, целое число
-        long averageSum = (int) saleAverageMonth(sale); //1) тут сумма, поэтому может быть больше 2 млрд, 2) месяц, меньше 2 млрд, целое число
+        long averageSum = saleAverageMonth(sale); //1) тут сумма, поэтому может быть больше 2 млрд
         int numberAboveAverage = 0; //целое число до 2 млрд
 
         for (int i = 0; i < sale.length; i++) {//целое число до 2 млрд
